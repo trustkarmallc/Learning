@@ -1,18 +1,29 @@
-/* Basic responsive layout */
-body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:0;background:#f9f9f9;color:#333;}
+/* Base layout */
+body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:0;background:#f4f7fb;color:#333;line-height:1.6;}
 header{background:#2c3e50;color:#fff;padding:1rem;}
 header h1{margin:0;font-size:1.8rem;}
-nav ul{list-style:none;padding:0;display:flex;gap:1rem;}
-nav a{color:#ecf0f1;text-decoration:none;}
-nav a:hover{text-decoration:underline;}
-main{padding:1rem;max-width:960px;margin:auto;}
+nav ul{list-style:none;padding:0;display:flex;gap:1rem;flex-wrap:wrap;}
+nav a{color:#ecf0f1;text-decoration:none;padding:0.3rem 0.6rem;}
+nav a:hover,nav a.active{background:#34495e;border-radius:4px;}
+main{max-width:960px;margin:auto;padding:1rem;}
 section{margin-bottom:2rem;}
-.resources ul{list-style:none;padding:0;}
-.resources li{margin:0.5rem 0;}
-footer{background:#2c3e50;color:#fff;text-align:center;padding:0.5rem;position:fixed;bottom:0;width:100%;}
-@media (max-width:600px){header h1{font-size:1.4rem;}nav ul{flex-direction:column;}}
+.btn-primary{display:inline-block;background:#e67e22;color:#fff;padding:0.6rem 1.2rem;border:none;border-radius:4px;text-decoration:none;cursor:pointer;}
+.btn-primary:hover{background:#d35400;}
+.btn-secondary{background:#2980b9;color:#fff;padding:0.5rem 1rem;border:none;border-radius:4px;cursor:pointer;}
+.btn-secondary:hover{background:#1f6391;}
+.lead-capture input[type=email]{padding:0.5rem;width:70%;max-width:300px;margin-right:0.5rem;border:1px solid #ccc;border-radius:4px;}
+.msg{margin-top:0.5rem;color:#27ae60;}
+.testimonials .testimonial{background:#fff;padding:1rem;margin:0.5rem 0;border-left:4px solid #e67e22;}
+.pricing-table{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+.plan{background:#fff;padding:1.5rem;border:1px solid #ddd;border-radius:6px;width:260px;text-align:center;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+.plan.featured{border-color:#e67e22;}
+.plan h3{margin-top:0;}
+.price{font-size:2rem;color:#e67e22;margin:0.5rem 0;}
+.price span{font-size:0.6rem;color:#555;}
+.plan ul{list-style:none;padding:0;text-align:left;margin:1rem 0;}
+.plan ul li{margin:0.4rem 0;}
+.urgency{background:#fffae6;padding:1rem;border:1px solid #f1c40f;border-radius:6px;text-align:center;}
+footer{background:#2c3e50;color:#fff;text-align:center;padding:0.5rem;position:fixed;bottom:0;width:100%;font-size:0.9rem;}
+@media (max-width:600px){header h1{font-size:1.4rem;}nav ul{flex-direction:column;} .pricing-table{flex-direction:column;align-items:center;}}
 /* Quiz styling */
-.quiz-container{background:#fff;padding:1rem;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-.question{margin-bottom:1rem;}
-.options label{display:block;margin:0.3rem 0;}
-.result{font-weight:bold;margin-top:1rem;}
+.quiz-container{background:#fff;padding:1rem;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.1);} .question{margin-bottom:1rem;} .options label{display:block;margin:0.3rem 0;} .result{font-weight:bold;margin-top:1rem;}
