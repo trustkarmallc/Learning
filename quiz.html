@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+<meta charset=\"UTF-8\">
+<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+<title>Chess Knowledge Quiz</title>
+<link rel=\"stylesheet\" href=\"styles.css\">
+</head>
+<body>
+<header>
+  <h1>Chess Knowledge Quiz</h1>
+  <nav aria-label=\"Main navigation\">
+    <ul>
+      <li><a href=\"index.html\">Home</a></li>
+      <li><a href=\"glossary.html\">Glossary</a></li>
+      <li><a href=\"opening_guide.html\">Opening Guide</a></li>
+      <li><a href=\"tactical_patterns.html\">Tactical Patterns</a></li>
+      <li><a href=\"endgame_strategy.html\">Endgame Strategy</a></li>
+      <li><a href=\"quiz.html\">Quiz</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class=\"quiz-container\">
+    <form id=\"quizForm\">
+      <div class=\"question\" data-correct=\"c\">
+        <p>1. Which piece can move any number of squares horizontally, vertically, or diagonally?</p>
+        <div class=\"options\">
+          <label><input type=\"radio\" name=\"q1\" value=\"a\"> King</label>
+          <label><input type=\"radio\" name=\"q1\" value=\"b\"> Knight</label>
+          <label><input type=\"radio\" name=\"q1\" value=\"c\"> Queen</label>
+          <label><input type=\"radio\" name=\"q1\" value=\"d\"> Bishop</label>
+        </div>
+      </div>
+      <div class=\"question\" data-correct=\"b\">
+        <p>2. A "fork" in chess is best described as:</p>
+        <div class=\"options\">
+          <label><input type=\"radio\" name=\"q2\" value=\"a\"> A piece attacking two pieces at once</label>
+          <label><input type=\"radio\" name=\"q2\" value=\"b\"> A pawn promotion</label>
+          <label><input type=\"radio\" name=\"q2\" value=\"c\"> A forced draw</label>
+          <label><input type=\"radio\" name=\"q2\" value=\"d\"> A checkmate pattern</label>
+        </div>
+      </div>
+      <div class=\"question\" data-correct=\"a\">
+        <p>3. In the opening, which principle is NOT recommended?</p>
+        <div class=\"options\">
+          <label><input type=\"radio\" name=\"q3\" value=\"a\"> Avoid castling</label>
+          <label><input type=\"radio\" name=\"q3\" value=\"b\"> Control the centre</label>
+          <label><input type=\"radio\" name=\"q3\" value=\"c\"> Develop pieces quickly</label>
+          <label><input type=\"radio\" name=\"q3\" value=\"d\"> Ensure king safety</label>
+        </div>
+      </div>
+      <button type=\"button\" onclick=\"checkAnswers()\">Submit Answers</button>
+    </form>
+    <div id=\"result\" class=\"result\"></div>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2026 Trust Karma LLC.</p>
+</footer>
+<script>
+function checkAnswers(){
+  const form=document.getElementById('quizForm');
+  const questions=document.querySelectorAll('.question');
+  let score=0;
+  questions.forEach((q,i)=>{
+    const selected=form['q'+(i+1)].value;
+    if(selected===q.dataset.correct){score++;}
+  });
+  const total=questions.length;
+  document.getElementById('result').textContent=`You scored ${score} out of ${total}`;
+}
+</script>
+</body>
+</html>
