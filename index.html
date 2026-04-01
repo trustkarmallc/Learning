@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chess Mastery Course</title>
+<title>Chess Mastery – Learn, Play, Win</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,26 +17,52 @@
       <li><a href="tactical_patterns.html">Tactical Patterns</a></li>
       <li><a href="endgame_strategy.html">Endgame Strategy</a></li>
       <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="pricing.html" class="cta">Pricing</a></li>
     </ul>
   </nav>
 </header>
 <main>
   <section class="intro">
-    <h2>Welcome to the Chess Mastery Course</h2>
-    <p>This course takes you from the basics of chess to advanced strategies. All materials are downloadable below.</p>
+    <h2>Master Chess – From Beginner to Grandmaster</h2>
+    <p>Join thousands of learners who have accelerated their chess skills with our proven curriculum, interactive quizzes, and AI‑driven feedback.</p>
+    <a href="pricing.html" class="btn-primary">Start Your Journey</a>
   </section>
-  <section class="resources">
-    <h2>Downloadable Resources</h2>
-    <ul>
-      <li><a href="resources/chess_terms_glossary.pdf" download>Chess Terms Glossary (PDF)</a></li>
-      <li><a href="resources/opening_guide.pdf" download>Opening Guide (PDF)</a></li>
-      <li><a href="resources/tactical_patterns.pdf" download>Tactical Patterns (PDF)</a></li>
-      <li><a href="resources/endgame_strategy.pdf" download>Endgame Strategy (PDF)</a></li>
-    </ul>
+
+  <section class="lead-capture">
+    <h2>Get a Free Sample Lesson</h2>
+    <p>Enter your email to receive a complimentary video lesson and a sneak‑peek of our premium content.</p>
+    <form id="leadForm" action="#" method="POST" onsubmit="return captureLead();">
+      <input type="email" name="email" placeholder="you@example.com" required>
+      <button type="submit" class="btn-secondary">Send Me Free Lesson</button>
+    </form>
+    <p id="leadMsg" class="msg"></p>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="testimonial">
+      <p>"The structured lessons and instant quiz feedback helped me break 1500 rating in just 3 months!" – <strong>Alex P.</strong></p>
+    </div>
+    <div class="testimonial">
+      <p>"The premium videos are crystal clear and the AI tips feel like a personal coach." – <strong>Sofia L.</strong></p>
+    </div>
+    <div class="testimonial">
+      <p>"I love the community forum – it keeps me motivated and accountable." – <strong>Ravi K.</strong></p>
+    </div>
   </section>
 </main>
 <footer>
   <p>&copy; 2026 Trust Karma LLC. All rights reserved.</p>
 </footer>
+<script>
+function captureLead(){
+  const form=document.getElementById('leadForm');
+  const email=form.email.value;
+  document.getElementById('leadMsg').textContent='Thank you! Check your inbox for the free lesson.';
+  // In a real product, you would POST to an email service here.
+  form.reset();
+  return false; // prevent page reload
+}
+</script>
 </body>
 </html>
